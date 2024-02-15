@@ -15,11 +15,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/container.css" />
   </head>
   <body>
     <!-- == Header == -->
 
-    <header class="header-body close">
+    <header class="header-body">
       <div class="acc-holder">
         <div class="profile">
           <li>
@@ -32,7 +33,7 @@
     </header>
 
     <!-- == Side Bar == -->
-    <nav class="sidebar close">
+    <nav class="sidebar">
       <header>
         <div class="image-text">
           <span class="image">
@@ -50,14 +51,14 @@
           <ul class="menu-links">
             <div class="separator"></div>
             <li class="nav-links">
-              <a href="#">
+              <a href="?page=page1">
                 <i class="bx bx-list-plus bx-flip-vertical icon1"></i>
                 <span class="text nav-text"> Create New Task</span>
               </a>
             </li>
             <div class="separator"></div>
             <li class="nav-links">
-              <a href="#">
+              <a href="?page=page2">
                 <i class="bx bx-list-ul icon2"></i>
                 <span class="text nav-text"> All Tasks</span>
               </a>
@@ -125,11 +126,24 @@
     </nav>
 
     <!-- == Body == -->
+    <section class="content-container">
+  <?php
+  if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+    if ($page === 'page1') {
+      include('task-container.php');
+    } elseif ($page === 'page2') {
+      include('test.php');
+    }
+  }
+  ?>
+</section>
 
     <script>
       const body = document.querySelector("body"),
         sidebar = body.querySelector(".sidebar"),
         header = body.querySelector(".header-body"),
+        container = body.querySelector(".content-container"),
         toggle = body.querySelector(".toggle");
 
       toggle.addEventListener("click", () => {
@@ -137,6 +151,9 @@
       });
       toggle.addEventListener("click", () => {
         header.classList.toggle("close");
+      });
+      toggle.addEventListener("click", () => {
+        container.classList.toggle("close");
       });
     </script>
 

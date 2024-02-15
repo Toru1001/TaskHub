@@ -1,0 +1,74 @@
+.task-container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.task-container .page-title{
+    padding-top: 30px;
+}
+
+.tasks-container{
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-model{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.task-model i{
+    font-size: 20px;
+}
+
+.task-model .details{
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+}
+
+.task-model li .icon{
+    color: green;
+}
+
+.task-model i{
+    color: green;
+}
+
+.task-model .due{
+    color: gray;
+    font-size: 13px;
+}
+
+.task-model .task-assignedto{
+    font-size: 13px;
+}
+
+.separators{
+    border-bottom: 2px solid #ccc; 
+    padding-bottom: 10px; 
+  }
+
+  .task-assigned{
+    padding-top: 40px;
+  }
