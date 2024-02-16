@@ -46,19 +46,20 @@
         </div>
         <i class="bx bx-chevron-right toggle"></i>
       </header>
+      <div class="scrollbar">
       <div class="menu-bar">
         <div class="menu">
           <ul class="menu-links">
             <div class="separator"></div>
             <li class="nav-links">
-              <a href="?page=page1">
+              <a href="#">
                 <i class="bx bx-list-plus bx-flip-vertical icon1"></i>
                 <span class="text nav-text"> Create New Task</span>
               </a>
             </li>
             <div class="separator"></div>
             <li class="nav-links">
-              <a href="?page=page2">
+              <a href="?page=page1">
                 <i class="bx bx-list-ul icon2"></i>
                 <span class="text nav-text"> All Tasks</span>
               </a>
@@ -70,7 +71,7 @@
               </a>
             </li>
             <li class="nav-links">
-              <a href="#">
+              <a href="?page=page2">
                 <i class="bx bx-calendar icon4"></i>
                 <span class="text nav-text"> Next 7 Days</span>
               </a>
@@ -120,8 +121,21 @@
               </a>
             </li>
             <div class="separator"></div>
+            <li class="nav-links">
+              <a href="#">
+              <i class='bx bxs-check-square icon12'></i>
+                <span class="text nav-text"> Completed</span>
+              </a>
+            </li>
+            <li class="nav-links">
+              <a href="#">
+              <i class='bx bx-calendar-exclamation icon13' ></i>
+                <span class="text nav-text"> Past-due</span>
+              </a>
+            
           </ul>
         </div>
+      </div>
       </div>
     </nav>
 
@@ -131,8 +145,9 @@
   if (isset($_GET['page'])) {
     $page = $_GET['page'];
     if ($page === 'page1') {
-      include('task-container.php');
+      include('containers/all-task-container.php');
     } elseif ($page === 'page2') {
+      $today = "Today";
       include('test.php');
     }
   }
