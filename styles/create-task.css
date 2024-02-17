@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*==== Colors ====*/
+    --body-color: rgb(228, 233, 247);
+    --sidebar-color: #FFF;
+    --primary-color: #6c6bb3;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #ddd;
+    --text-color: #3f3f3f;
+
+    /*==== Transition ====*/
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+.create-task-container{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-task-container .create-texts{
+    font-weight: bold;
+}
+
+.create-task-container form{
+    margin-top: 2vh;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.create-task-container form .top{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 500px;
+}
+
+.create-task-container .lower{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 20px;
+    margin-top: 20px;
+    width: 500px;
+}
+
+.create-task-container .lower .text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 20px;
+    width: 150px;
+}
+.create-task-container .lower .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 20px;
+    width: 300px;
+}
+
+.create-texts{
+    width: 120px;
+}
+
+.field{
+    background-color: rgba(49, 49, 49, 0.226);
+    width: 100%;
+    font-size: 15px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-color: var(--text-color);
+    border-width: 1px;
+    color: var(--text-color);
+    border-radius: 10px;
+    height: 30px;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.description{
+    background-color: rgba(49, 49, 49, 0.226);
+    width: 100%;
+    font-size: 15px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-color: var(--text-color);
+    border-width: 1px;
+    color: var(--text-color);
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+
+.category, .date, .priority, .assignee{
+    background-color: rgb(228, 233, 247,0);
+    width: 100%;
+    font-size: 15px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-color: var(--text-color);
+    border-width: 1px;
+    color: var(--text-color);
+}
+
+input:focus {
+    outline: none;
+  }
+
+textarea:focus {
+    outline: none;
+  }
+
+.submit-btn{
+    border-radius: 5px;
+    border-color: var(--primary-color);
+    border-width: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--primary-color);
+    color: var(--primary-color-light);
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: var(--tran-04);
+}
+
+.submit-btn:hover{
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    cursor: pointer;
+}
