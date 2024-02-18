@@ -1,6 +1,6 @@
 <?php
 include 'config.php';
-if (isset($_POST['submit'])) {
+if (isset($_POST['submittask'])) {
     $title = mysqli_real_escape_string($conn, $_POST['title']);
     $description = mysqli_real_escape_string($conn, $_POST['description']);
     $username = $fetch['username'];
@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
                     </select>
                 </div>
             </div>
-            <input name="submit" type="submit" value="Create" class="submit-btn">
+            <input name="submittask" type="submit" value="Create" class="submit-btn">
         </form>
     </div>
 

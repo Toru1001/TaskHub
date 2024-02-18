@@ -19,7 +19,8 @@ include("config.php");
         </div>
         <div class="tasks-container">
             <?php
-            $taskresult = mysqli_query($conn, "SELECT * FROM `all_tasks`");
+            $username = $fetch['username'];
+            $taskresult = mysqli_query($conn, "SELECT * FROM `all_tasks` WHERE `user_id` = '$user_id' AND `assigned_to` = '$username' AND `status` = 'Ongoing';");
             if (mysqli_num_rows($taskresult) > 0) {
                 while ($row = mysqli_fetch_assoc($taskresult)) {
                     echo '<div class="task-model">
@@ -41,7 +42,13 @@ include("config.php");
 
                     echo '</a>
                     </li>';
-                    echo '<div class="task-assignedto">Assigned by ' . $row['assigned_by'] . '</div>';
+                    $assigned_by = $row['assigned_by'];
+                    $assignedbyresult = mysqli_query($conn, "SELECT * FROM `users_table` WHERE `username` = '$assigned_by';");
+                    if (mysqli_num_rows($assignedbyresult) > 0) {
+                        while ($assigned = mysqli_fetch_assoc($assignedbyresult)) {
+                            echo '<div class="task-assignedto">Assigned by ' . $assigned['firstname'] . '</div>';
+                        }
+                    }
                     echo '</div>';
                 }
             }
@@ -59,16 +66,45 @@ include("config.php");
             <h3>Assigned to Me By Others</h3>
         </div>
         <div class="tasks-container">
-            <div class="task-model">
+            <?php
+            $username = $fetch['username'];
+            $taskresult = mysqli_query($conn, "SELECT * FROM `all_tasks` WHERE `assigned_to` = '$username' AND `status` = 'Ongoing';");
+            if (mysqli_num_rows($taskresult) > 0) {
+                while ($row = mysqli_fetch_assoc($taskresult)) {
+                    if ($row['assigned_by'] != $username) {
+                        echo '<div class="task-model">
                 <li class="task-detail">
-                    <a href="#">
-                        <i class="bx bx-home-alt icon"></i>
-                        <span class="details">Make Coffee</span>
-                        <span class="due">(Due: 2020-07-05 00:00:00 am)</span>
-                    </a>
-                </li>
-                <div class="task-assignedto">Assigned by Niel</div>
-            </div>
+                    <a href="#">';
+                        echo '<a href="#">';
+                        if ($row["category"] === "Work") {
+                            echo '<i class="bx bx-briefcase-alt-2 icon1"></i>';
+                        } elseif ($row['category'] === 'Home') {
+                            echo '<i class="bx bx-home-alt icon2"></i>';
+                        } elseif ($row['category'] === 'Coding') {
+                            echo '<i class="bx bxs-keyboard icon3"></i>';
+                        } elseif ($row['category'] === 'Others') {
+                            echo '<i class="bx bx-message-dots icon4"></i>';
+                        }
+
+                        echo '<span class="details">' . $row['title'] . '</span>';
+                        echo '<span class="due">(Due: ' . $row['due_date'] . ')</span>';
+
+                        echo '</a>
+                    </li>';
+                        $assigned_by = $row['assigned_by'];
+                        $assignedbyresult = mysqli_query($conn, "SELECT * FROM `users_table` WHERE `username` = '$assigned_by';");
+                        if (mysqli_num_rows($assignedbyresult) > 0) {
+                            while ($assigned = mysqli_fetch_assoc($assignedbyresult)) {
+                                echo '<div class="task-assignedto">Assigned by ' . $assigned['firstname'] . '</div>';
+
+                            }
+
+                        }
+                        echo '</div>';
+                    }
+                }
+            }
+            ?>
         </div>
     </div>
 </body>

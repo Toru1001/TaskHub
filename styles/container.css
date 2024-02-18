@@ -59,7 +59,6 @@ li{
 .task-detail{
     display: flex;
     flex-direction: column;
-    align-items: left;
     width: 100%;
     gap: 10px;
 }
@@ -103,6 +102,7 @@ li{
 }
 
 .task-model .task-assignedto{
+    padding-top: 15px;
     font-size: 12px;
     color: var(--text-color);
     width: 180px;
@@ -137,7 +137,7 @@ li{
   }
   .prof-img{
     width:200px;
-    border-radius: 100px;
+    border-radius: 100%;
     border-style: groove;
     border-width: 5px;
     border-color: var(--primary-color);
@@ -299,6 +299,7 @@ li{
     font-size: 30px;
     color: var(--text-color);
     font-weight: 600px;
+    margin-left: -11px;
 }
 
 .edit-profile-container .icon-container{
@@ -308,6 +309,6 @@ li{
     justify-content: flex-start;
     gap: 20px;
     flex-direction: column;
-    margin-top: -110px;
+    margin-top: -125px;
     margin-left: -300px;
 }

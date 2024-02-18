@@ -26,7 +26,6 @@ if (isset($_GET['logout'])) {
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="styles/container.css" />
-  <link rel="stylesheet" href="styles/create-task.css">
 
 </head>
 
@@ -96,7 +95,7 @@ if (isset($_GET['logout'])) {
             </li>
             <div class="separator"></div>
             <li class="nav-links">
-              <a href="#">
+              <a href="">
                 <i class="bx bx-calendar-exclamation icon5"></i>
                 <span class="text nav-text"> High Priority</span>
               </a>

@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submiteditprof'])) {
 
     $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
     $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
@@ -91,7 +91,7 @@ if (isset($_POST['submit'])) {
             <input type="password" name="repassword" placeholder="Confirm Password" class="field">
             <p>Select Profile Picture</p>
             <input name="img" type="file" class="file-container" accept="image/jpg, image/jpeg, image/png">
-            <input name="submit" type="submit" value="Apply Changes" class="submit-btn">
+            <input name="submiteditprof" type="submit" value="Apply Changes" class="submit-btn">
         </form>
     </div>
 
