@@ -163,9 +163,9 @@ if (isset($_GET['logout'])) {
       if ($page === 'page1') {
         include('containers/all-task-container.php');
       } elseif ($page === 'page2') {
-        include('test.php');
+        include('containers/today-all-task-container.php');
       } elseif ($page === 'page3') {
-        include('create-task.php');
+        include('containers/7days-task-container.php');
       } elseif ($page === 'profile') {
         include('viewprofile.php');
       }

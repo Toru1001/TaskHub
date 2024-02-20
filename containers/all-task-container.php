@@ -56,7 +56,7 @@ include("config.php");
 
             <div class="separators"></div>
             <li class="task-model">
-                <a href="#">
+                <a href="javascript:void(0);" onclick="openCreatePopup()">
                     <i class="bx bx-list-plus bx-flip-vertical icon"></i>
                     <span class="details"> Create New Task</span>
                 </a>
