@@ -24,9 +24,9 @@ include("config.php");
             if (mysqli_num_rows($taskresult) > 0) {
                 while ($row = mysqli_fetch_assoc($taskresult)) {
                     echo '<div class="task-model">
-                <li class="task-detail">
-                    <a href="#">';
-                    echo '<a href="#">';
+                <li class="task-detail">';
+                    echo '<a href="task-page.php?task_id=' . $row['task_id'] . '" class="data-link">';
+
                     if ($row["category"] === "Work") {
                         echo '<i class="bx bx-briefcase-alt-2 icon1"></i>';
                     } elseif ($row['category'] === 'Home') {
@@ -75,7 +75,6 @@ include("config.php");
                         echo '<div class="task-model">
                 <li class="task-detail">
                     <a href="#">';
-                        echo '<a href="#">';
                         if ($row["category"] === "Work") {
                             echo '<i class="bx bx-briefcase-alt-2 icon1"></i>';
                         } elseif ($row['category'] === 'Home') {

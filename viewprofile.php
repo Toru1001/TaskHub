@@ -16,7 +16,9 @@ include 'config.php';
 
     <div class="profile-container">
         <div class="profile-picture">
-            <img class="prof-img" src="<?php echo 'profile_picture/' . $fetch['img'] ?>" alt="">
+            <div class="img-container">
+                <img class="prof-img" src="<?php echo 'profile_picture/' . $fetch['img'] ?>" alt="">
+            </div>
             <h3 class="name-holder">
                 <?php echo $fetch['firstname'] . " " . $fetch['lastname'] ?>
             </h3>

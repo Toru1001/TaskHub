@@ -135,12 +135,24 @@ li{
     justify-content: center;
     margin-top: 30px;
   }
-  .prof-img{
-    width:200px;
-    border-radius: 100%;
+
+  .img-container{
+    width: 200px; 
+    height: 200px; 
+    background-color: #ccc;
+    border-radius: 50%; 
+    overflow: hidden; 
+    position: relative;
     border-style: groove;
     border-width: 5px;
     border-color: var(--primary-color);
+  }
+
+  .prof-img{
+    width: 200px; 
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
   }
 
   .name-holder{
@@ -312,3 +324,4 @@ li{
     margin-top: -125px;
     margin-left: -300px;
 }
+
