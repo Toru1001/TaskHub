@@ -25,9 +25,9 @@
 
 .task-container{
     display: flex;
-    flex-direction: column;
-    padding-left: 40px;
+    flex-wrap: wrap;
 }
+
 
 a{
     text-decoration: none;
@@ -38,29 +38,50 @@ li{
 }
 
 .task-container .page-title{
-    padding-top: 30px;
+    padding-top: 20px;
+    align-self: center;
 }
 
 .tasks-container{
-    margin-left: 40px;
-    margin-right: 40px;
+    height: fit-content;
+    align-items: center;
+    margin: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
 }
 
 .task-model{
     margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    border-radius: 10px;
+    transition: var(--tran-03);
 }
+
+.task-model:hover{
+  padding-left: 10px;
+  background-color: #b0b0cc;
+}
+
 
 .task-detail{
     display: flex;
-    flex-direction: column;
     width: 100%;
     gap: 10px;
+}
+
+.task-detail a{
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -102,20 +123,25 @@ li{
 }
 
 .task-model .task-assignedto{
-    padding-top: 15px;
     font-size: 12px;
     color: var(--text-color);
     width: 180px;
 }
 
 .separators{
-    border-bottom: 2px solid #ccc; 
-    padding-bottom: 10px; 
+    border-bottom: 1px solid #6666666b;
+    width: 100%;
   }
 
   .task-assigned{
-    padding-top: 40px;
+    padding-top: 10px;
+    align-self: center;
   }
+
+  .task-assigned,
+  .tasks-container {
+            flex: 1;
+        }
 
   /*===== Profile Container =====*/
   
@@ -161,36 +187,40 @@ li{
   }
 
   .profile-details{
+    padding: 10px;
     display: flex;
     align-items: center;
-    width: 80%;
+    width: 70%;
     margin-top: 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     padding-top: 30px;
     padding-bottom: 30px;
     border-radius: 30px;
     background-color: var(--primary-color-light);
+    
   }
 
   .profile-details .text{
-    margin-left: 30px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: left;
     width: 100%;
-    gap: 40px;
     font-weight: bolder;
+    padding-left: 10px;
+    gap: 20px;
   }
 
-  .profile-details .main-details{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 40px;
-    padding-right: 20px;
+  .main-details{
+    color: var(--text-color);
+    font-weight: normal;
+    width: 60%;
   }
 
-  .profile-details .main-details .password{
+  .text-details{
+    width: 30%;
+  }
+
+  .password{
     border: none;
     color: var(--text-color);
   }
@@ -206,6 +236,7 @@ li{
     color: var(--primary-color-light);
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+    margin-bottom: 20px;
   }
 
   .edit-profilebtn:hover{
@@ -314,6 +345,10 @@ li{
     margin-left: -11px;
 }
 
+input:focus {
+  outline: none;
+}
+
 .edit-profile-container .icon-container{
     position: absolute;
     display: flex;
@@ -321,7 +356,52 @@ li{
     justify-content: flex-start;
     gap: 20px;
     flex-direction: column;
-    margin-top: -125px;
+    margin-top: -100px;
     margin-left: -300px;
 }
 
+@media only screen and (max-width: 600px) {
+  .task-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+
+  .task-assigned,
+  .tasks-container {
+      width: 100%;
+  }
+  .main-details{
+    width: 50%;
+    font-size: 11px;
+  }
+
+  .text-details{
+    width: 30%;
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .task-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+
+  .task-assigned,
+  .tasks-container {
+      width: 100%;
+  }
+
+  .main-details{
+    padding-left: 20px;
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .text-details{
+    width: 100%;
+    font-size: 12px;
+  }
+
+  
+}

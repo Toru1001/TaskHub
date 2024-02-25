@@ -11,6 +11,10 @@ if (isset($_POST['submittask'])) {
     $assigned_to = mysqli_real_escape_string($conn, $_POST['assignee']);
     $status = 'Ongoing';
     $insert = mysqli_query($conn, "INSERT INTO `all_tasks` (user_id, username, title, description, category, due_date, priority, assigned_by, assigned_to, status) VALUES ('$user_id', '$username', '$title', '$description', '$category', '$due_date', '$priority', '$assigned_by', '$assigned_to', '$status');") or die('Query failed');
+    echo '<script>document.body.innerHTML = "<div style=\'text-align: center; margin-top: 20%;\'><h2>Loading...</h2></div>";
+                    setTimeout(function() {
+                    window.location.href = "' . $_SERVER['PHP_SELF'] . '";
+                    }, 1);</script>';
 }
 ?>
 

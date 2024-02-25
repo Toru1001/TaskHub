@@ -10,6 +10,10 @@ if (isset($_GET['logout'])) {
   session_destroy();
   header('location: login.php');
 }
+
+$currentDate = date("Y-m-d");
+$updateQuery = "UPDATE `all_tasks` SET status = 'Past-Due' WHERE due_date < '$currentDate'";
+mysqli_query($conn, $updateQuery);
 ?>
 
 
@@ -26,7 +30,7 @@ if (isset($_GET['logout'])) {
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="styles/container.css" />
-
+  <link rel="stylesheet" href="styles/task-details.css" />
 </head>
 
 <body>
@@ -42,10 +46,21 @@ if (isset($_GET['logout'])) {
     <div class="acc-holder">
       <div class="profile">
         <li>
-          <a href="?page=profile"><img class="prof" src="<?php echo 'profile_picture/' . $fetch['img'] ?>" alt="" /></a>
+          <a href="javascript:void(0);" onclick="menuToggle();"><img class="prof"
+              src="<?php echo 'profile_picture/' . $fetch['img'] ?>" alt="" /></a>
         </li>
       </div>
-      <li><a href="main.php?logout=<?php echo $user_id; ?>" class="btnlogout">Log-out</a></li>
+    </div>
+
+    <div class="prof-menu">
+      <h5>
+        <?php echo $fetch['firstname'] . ' ' . $fetch['lastname']; ?>
+      </h5>
+      <div class="separator"></div>
+      <ul>
+        <li><i class='bx bx-user-circle'></i><a href="?page=profile">My Profile</a></li>
+        <li><i class='bx bxs-log-in-circle'></i></i><a href="main.php?logout=<?php echo $user_id; ?>">Logout</a></li>
+      </ul>
     </div>
   </header>
 
@@ -69,7 +84,7 @@ if (isset($_GET['logout'])) {
           <ul class="menu-links">
             <div class="separator"></div>
             <li class="nav-links">
-              <a href="javascript:void(0);" onclick="openCreatePopup()">
+              <a href="?page=create">
                 <i class="bx bx-list-plus bx-flip-vertical icon1"></i>
                 <span class="text nav-text"> Create New Task</span>
               </a>
@@ -168,6 +183,12 @@ if (isset($_GET['logout'])) {
         include('containers/7days-task-container.php');
       } elseif ($page === 'profile') {
         include('viewprofile.php');
+      } elseif ($page === 'tasks') {
+        include('store_data.php');
+      } elseif ($page === 'edit') {
+        include('edit-task.php');
+      } elseif ($page === 'create') {
+        include('create-task.php');
       }
     } else {
       include('containers/all-task-container.php');
@@ -184,48 +205,7 @@ if (isset($_GET['logout'])) {
     ?>
   </div>
 
-  <div id="popup-container-create">
-    <span class="close-btn-create" onclick="closeCreatePopup()">&times;</span>
-    <?php
-    include('create-task.php');
-    ?>
-  </div>
-
-  <script>
-    const body = document.querySelector("body"),
-      sidebar = body.querySelector(".sidebar"),
-      header = body.querySelector(".header-body"),
-      container = body.querySelector(".content-container"),
-      toggle = body.querySelector(".toggle");
-
-    toggle.addEventListener("click", () => {
-      sidebar.classList.toggle("close");
-    });
-    toggle.addEventListener("click", () => {
-      header.classList.toggle("close");
-    });
-    toggle.addEventListener("click", () => {
-      container.classList.toggle("close");
-    });
-
-    function openPopup() {
-      document.getElementById('popup-container').style.display = 'block';
-    }
-
-    function closePopup() {
-      document.getElementById('popup-container').style.display = 'none';
-    }
-
-    function openCreatePopup() {
-      document.getElementById('popup-container-create').style.display = 'block';
-    }
-
-    function closeCreatePopup() {
-      document.getElementById('popup-container-create').style.display = 'none';
-    }
-
-  </script>
-
+  <script src="main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>

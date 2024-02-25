@@ -25,33 +25,22 @@ include 'config.php';
         </div>
         <div class="profile-details">
             <div class="text">
-                <span>First Name:</span>
-                <span>Last Name:</span>
-                <span>Username:</span>
-                <span>Email:</span>
-                <span>Password:</span>
-            </div>
-            <div class="main-details">
                 <?php
-                echo '<span>' . $fetch['firstname'] . '</span>';
-                echo '<span>' . $fetch['lastname'] . '</span>';
-                echo '<span>' . $fetch['username'] . '</span>';
-                echo '<span>' . $fetch['email'] . '</span>';
-                echo '<span><input type="password" class="password" readonly value="' . $fetch['password'] . '"></span>';
+                echo '<span class="text-details">First Name:</span>';
+                echo '<span class="main-details">' . $fetch['firstname'] . '</span>';
+                echo '<span class="text-details">Last Name:</span>';
+                echo '<span class="main-details">' . $fetch['lastname'] . '</span>';
+                echo '<span class="text-details">Username:</span>';
+                echo '<span class="main-details">' . $fetch['username'] . '</span>';
+                echo '<span class="text-details">Email:</span>';
+                echo '<span class="main-details">' . $fetch['email'] . '</span>';
+                echo '<span class="text-details">Password:</span>';
+                echo '<span class="main-details"><input type="password" class="password" readonly value="' . $fetch['password'] . '"></span>';
                 ?>
             </div>
         </div>
         <button class="edit-profilebtn" onclick="openPopup()">Edit Profile</button>
     </div>
-
-    <script>
-        function openPopup() {
-            document.getElementById('popup-container').style.display = 'block';
-        }
-        function closePopup() {
-            document.getElementById('popup-container').style.display = 'none';
-        }
-    </script>
 
 </body>
 
