@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2024 at 10:40 PM
+-- Generation Time: Feb 25, 2024 at 01:56 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `all_tasks` (
+  `task_id` int(11) NOT NULL,
   `user_id` int(250) NOT NULL,
   `username` varchar(250) NOT NULL,
   `title` varchar(250) NOT NULL,
@@ -44,13 +45,36 @@ CREATE TABLE `all_tasks` (
 -- Dumping data for table `all_tasks`
 --
 
-INSERT INTO `all_tasks` (`user_id`, `username`, `title`, `description`, `category`, `due_date`, `priority`, `assigned_by`, `assigned_to`, `status`) VALUES
-(8, 'me.toru1001', 'CST5 - Lab Activity', 'Open BBL for more information regarding this task', 'Work', '2024-02-21', 'High', 'me.toru1001', 'me.toru1001', 'Ongoing'),
-(8, 'me.toru1001', 'Make coffee', 'Make coffee for midnight.', 'Home', '2024-02-22', 'Medium', 'me.toru1001', 'me.toru1001', 'Ongoing'),
-(8, 'me.toru1001', 'Code for a java program', 'JAVA MYSQL GUI', 'Coding', '2024-02-27', 'Medium', 'me.toru1001', 'me.toru1001', 'Ongoing'),
-(6, 'pammi', 'Make our Group Activity Report!', 'assdsadssda', 'Others', '2024-02-21', 'High', 'pammi', 'me.toru1001', 'Ongoing'),
-(6, 'pammi', 'Status Report', 'asdadsczx', 'Home', '2024-02-27', 'Low', 'pammi', 'me.toru1001', 'Ongoing'),
-(6, 'pammi', 'RESEARCH THESIS', '', 'Coding', '2024-02-22', 'Medium', 'pammi', 'me.toru1001', 'Ongoing');
+INSERT INTO `all_tasks` (`task_id`, `user_id`, `username`, `title`, `description`, `category`, `due_date`, `priority`, `assigned_by`, `assigned_to`, `status`) VALUES
+(1, 8, 'me.toru1001', 'CST5 - Code', 'Check Blackboard learn for other details.', 'Coding', '2024-02-25', 'High', 'me.toru1001', 'me.toru1001', 'Ongoing'),
+(2, 8, 'me.toru1001', 'Tarong na task hehe', 'Mao ka', 'Work', '2024-02-26', 'Medium', 'me.toru1001', 'me.toru1001', 'Ongoing'),
+(5, 6, 'pammi', 'Status Report', 'asdadsczx', 'Home', '2024-02-27', 'Low', 'pammi', 'me.toru1001', 'Completed'),
+(7, 6, 'pammi', 'thi task', 'mao nani na task', 'Home', '2024-02-20', 'Medium', 'pammi', 'pammi', 'Past-Due'),
+(8, 6, 'pammi', 'Pagkaon nalang', 'HEHE', 'Home', '2024-02-20', 'Low', 'pammi', 'me.toru1001', 'Past-Due'),
+(10, 8, 'me.toru1001', 'hello', 'this is', 'Home', '2024-02-27', 'Low', 'me.toru1001', 'pammi', 'Ongoing'),
+(11, 8, 'me.toru1001', 'Doing this for you', 'mag maoy :)', 'Others', '2024-02-26', 'Medium', 'me.toru1001', 'pammi', 'Ongoing'),
+(12, 6, 'pammi', 'Eat well ikaw!', 'Kain kalang mabuti self hehe', 'Home', '2024-02-26', 'Medium', 'pammi', 'me.toru1001', 'Ongoing'),
+(13, 6, 'pammi', 'Help meee', 'nyenye', 'Coding', '2024-02-27', 'Low', 'pammi', 'me.toru1001', 'Ongoing');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `all_tasks`
+--
+ALTER TABLE `all_tasks`
+  ADD PRIMARY KEY (`task_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `all_tasks`
+--
+ALTER TABLE `all_tasks`
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
