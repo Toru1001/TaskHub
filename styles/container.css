@@ -172,6 +172,7 @@ li{
     border-style: groove;
     border-width: 5px;
     border-color: var(--primary-color);
+    object-fit: cover;
   }
 
   .prof-img{
@@ -179,6 +180,12 @@ li{
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
+  }
+
+  .prof{
+    width: 150px; 
+    height: 60px;
+    object-fit: cover;
   }
 
   .name-holder{
@@ -362,8 +369,8 @@ input:focus {
 
 @media only screen and (max-width: 600px) {
   .task-container {
-      flex-direction: row;
-      flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   .task-assigned,
@@ -383,8 +390,8 @@ input:focus {
 
 @media only screen and (max-width: 430px) {
   .task-container {
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: column;
+      flex-wrap: nowrap;
   }
 
   .task-assigned,

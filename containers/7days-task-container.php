@@ -68,7 +68,7 @@ include("config.php");
             </li>
         </div>
         <div class="task-assigned">
-            <h3>Assigned to Me By Others</h3>
+            <h3>Assigned By Others</h3>
         </div>
         <div class="tasks-container">
             <?php

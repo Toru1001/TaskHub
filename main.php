@@ -3,12 +3,12 @@ include 'config.php';
 session_start();
 $user_id = $_SESSION['user_id'];
 if (!isset($user_id)) {
-  header('location: login.php');
+  header('location: login-signup.php');
 }
 if (isset($_GET['logout'])) {
   unset($session_id);
   session_destroy();
-  header('location: login.php');
+  header('location: login-signup.php');
 }
 
 $currentDate = date("Y-m-d");

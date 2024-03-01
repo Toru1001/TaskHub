@@ -66,7 +66,7 @@ include("config.php");
         <!-- === Second Container -->
         <div class="tasks-container">
             <div class="task-assigned">
-                <h5>Assigned to Me By Others</h5>
+                <h5>Assigned By Others</h5>
             </div>
             <div class="separators"></div>
             <?php
