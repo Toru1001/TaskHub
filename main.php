@@ -110,58 +110,58 @@ mysqli_query($conn, $updateQuery);
             </li>
             <div class="separator"></div>
             <li class="nav-links">
-              <a href="">
+              <a href="?page=page4">
                 <i class="bx bx-calendar-exclamation icon5"></i>
                 <span class="text nav-text"> High Priority</span>
               </a>
             </li>
             <li class="nav-links">
-              <a href="#">
+              <a href="?page=page5">
                 <i class="bx bx-calendar-exclamation icon6"></i>
                 <span class="text nav-text"> Medium Priority</span>
               </a>
             </li>
             <li class="nav-links">
-              <a href="#">
+              <a href="?page=page6">
                 <i class="bx bx-calendar-exclamation icon7"></i>
                 <span class="text nav-text"> Low Priority</span>
               </a>
             </li>
             <div class="separator"></div>
             <li class="nav-links">
-              <a href="#">
+              <a href="?page=page7">
                 <i class="bx bx-briefcase-alt-2 icon8"></i>
                 <span class="text nav-text"> Work</span>
               </a>
             </li>
             <li class="nav-links">
-              <a href="#">
+              <a href="?page=page8">
                 <i class="bx bx-home-alt icon9"></i>
                 <span class="text nav-text"> Home</span>
               </a>
             </li>
             <li class="nav-links">
-              <a href="#">
+              <a href="?page=page9">
                 <i class="bx bxs-keyboard icon10"></i>
                 <span class="text nav-text"> Coding</span>
               </a>
             </li>
             <li class="nav-links">
-              <a href="#">
+              <a href="?page=page10">
                 <i class="bx bx-message-dots icon11"></i>
                 <span class="text nav-text"> Others</span>
               </a>
             </li>
             <div class="separator"></div>
             <li class="nav-links">
-              <a href="#">
+              <a href="?page=page11">
                 <i class='bx bxs-check-square icon12'></i>
                 <span class="text nav-text"> Completed</span>
               </a>
             </li>
             <li class="nav-links">
-              <a href="#">
-                <i class='bx bx-calendar-exclamation icon13'></i>
+              <a href="?page=page12">
+                <i class='bx bxs-message-square-x icon13'></i>
                 <span class="text nav-text"> Past-due</span>
               </a>
           </ul>
@@ -181,6 +181,24 @@ mysqli_query($conn, $updateQuery);
         include('containers/today-all-task-container.php');
       } elseif ($page === 'page3') {
         include('containers/7days-task-container.php');
+      } elseif ($page === 'page4') {
+        include('containers/highprio-task-container.php');
+      } elseif ($page === 'page5') {
+        include('containers/midprio-task-container.php');
+      } elseif ($page === 'page6') {
+        include('containers/lowprio-task-container.php');
+      } elseif ($page === 'page7') {
+        include('containers/work-task-container.php');
+      } elseif ($page === 'page8') {
+        include('containers/home-task-container.php');
+      } elseif ($page === 'page9') {
+        include('containers/coding-task-container.php');
+      } elseif ($page === 'page10') {
+        include('containers/others-task-container.php');
+      } elseif ($page === 'page11') {
+        include('containers/completed-task-container.php');
+      } elseif ($page === 'page12') {
+        include('containers/pastdue-task-container.php');
       } elseif ($page === 'profile') {
         include('viewprofile.php');
       } elseif ($page === 'tasks') {
@@ -199,7 +217,6 @@ mysqli_query($conn, $updateQuery);
   <!-- === POP-UP Container -->
 
   <div id="popup-container">
-    <span class="close-btn" onclick="closePopup()">&times;</span>
     <?php
     include('edit-profile.php');
     ?>

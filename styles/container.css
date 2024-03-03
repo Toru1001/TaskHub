@@ -112,6 +112,42 @@ li{
   color: rgb(255, 0, 200);
 }
 
+.task-model li .icon5{
+  color: rgb(102, 0, 0);
+}
+
+.task-model li .icon6{
+  color: rgb(214, 104, 0);
+}
+
+.task-model li .icon7{
+  color: rgb(21, 75, 0);
+}
+
+.task-model li .icon8{
+  color: rgb(0, 120, 233);
+}
+
+.task-model li .icon9{
+  color: rgb(212, 255, 0);
+}
+
+.task-model li .icon10{
+  color: rgb(15, 0, 97);
+}
+
+.task-model li .icon11{
+  color: rgb(255, 0, 200);
+}
+
+.task-model li .icon12{
+  color: green;
+}
+
+.task-model li .icon13{
+  color: rgb(128, 0, 0);
+}
+
 .task-model i{
     color: green;
 }
@@ -134,7 +170,8 @@ li{
   }
 
   .task-assigned{
-    padding-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 5px;
     align-self: center;
   }
 
@@ -363,7 +400,7 @@ input:focus {
     justify-content: flex-start;
     gap: 20px;
     flex-direction: column;
-    margin-top: -100px;
+    margin-top: -170px;
     margin-left: -300px;
 }
 
@@ -376,7 +413,9 @@ input:focus {
   .task-assigned,
   .tasks-container {
       width: 100%;
+      padding-right: 30px;
   }
+
   .main-details{
     width: 50%;
     font-size: 11px;
@@ -396,7 +435,7 @@ input:focus {
 
   .task-assigned,
   .tasks-container {
-      width: 100%;
+    width: 90%;
   }
 
   .main-details{
@@ -404,11 +443,33 @@ input:focus {
     width: 100%;
     font-size: 12px;
   }
+}
 
-  .text-details{
+@media only screen and (max-width: 280px) {
+  .task-container {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      width: 266px;
+  }
+
+  .task-assigned,
+  .tasks-container {
+    width: 85%;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .main-details{
+    padding-left: 10px;
     width: 100%;
     font-size: 12px;
   }
 
-  
+  .task-detail i{
+    margin-left: 5px;
+  }
+
+  .task-model i{
+    margin-left: 5px;
+  }
 }

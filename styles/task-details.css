@@ -35,6 +35,7 @@
 }
 
 .detail{
+    width: fit-content;
     padding-left: 10%;
     display: flex;
     margin-top: 5px;
@@ -46,6 +47,7 @@
 
 .text-details{
     margin-left: 10px;
+    width: fit-content;
 }
 
 .detail-description{
@@ -125,6 +127,11 @@
     font-size: 20px;
 }
 
+.icon13{
+    color: rgb(128, 0, 0);
+    font-size: 20px;
+}
+
 
 .button-holder{
     flex-wrap: wrap;
@@ -138,6 +145,14 @@
     justify-content: center;
     margin-top: 10px;
     margin-right: 10px;
+}
+
+@media only screen and (max-width: 850px){
+    .details-container{
+        margin-top: 20px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
 }
 
 @media only screen and (max-width: 460px){
@@ -169,14 +184,6 @@
         color: var(--text-color);
         font-size: 15px;
     }
-    
-    .details-container{
-        margin-top: 20px;
-        margin-left: 10px;
-        margin-right: 10px;
-        
-    }
-    
 
     .button-holder input, .button-holder a{
         display: flex;
@@ -186,4 +193,17 @@
         width: 100%;
         margin-top: 10px;
     }
+}
+
+@media only screen and (max-width: 300px){
+
+.details-container{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.detail, .detail-description{
+    font-size: 12px;
+}
 }

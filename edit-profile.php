@@ -92,6 +92,7 @@ if (isset($_POST['submiteditprof'])) {
             <p>Select Profile Picture</p>
             <input name="img" type="file" class="file-container" accept="image/jpg, image/jpeg, image/png">
             <input name="submiteditprof" type="submit" value="Apply Changes" class="submit-btn">
+            <span class="submit-btn" onclick="closePopup()">Cancel</span>
         </form>
     </div>
 

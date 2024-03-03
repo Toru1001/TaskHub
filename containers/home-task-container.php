@@ -18,27 +18,17 @@ include("config.php");
         <!-- === First Container -->
         <div class="tasks-container">
             <div class="page-title">
-                <h4>Today's Tasks</h4>
+                <h4>High Priority Tasks</h4>
             </div>
             <div class="separators"></div>
             <?php
             $username = $fetch['username'];
-            date_default_timezone_set('Asia/Manila');
-            $currentDate = date('Y-m-d');
-            $taskresult = mysqli_query($conn, "SELECT * FROM `all_tasks` WHERE `user_id` = '$user_id' AND `assigned_to` = '$username' AND `status` = 'Ongoing' AND `due_date` = '$currentDate';");
+            $taskresult = mysqli_query($conn, "SELECT * FROM `all_tasks` WHERE `user_id` = '$user_id' AND `assigned_to` = '$username' AND `status` = 'Ongoing' AND category = 'Home';");
             if (mysqli_num_rows($taskresult) > 0) {
                 while ($row = mysqli_fetch_assoc($taskresult)) {
                     echo '<div class="task-model">
                 <li class="task-detail">';
-                    if ($row["category"] === "Work") {
-                        echo '<i class="bx bx-briefcase-alt-2 icon1"></i>';
-                    } elseif ($row['category'] === 'Home') {
-                        echo '<i class="bx bx-home-alt icon2"></i>';
-                    } elseif ($row['category'] === 'Coding') {
-                        echo '<i class="bx bxs-keyboard icon3"></i>';
-                    } elseif ($row['category'] === 'Others') {
-                        echo '<i class="bx bx-message-dots icon4"></i>';
-                    }
+                    echo '<i class="bx bx-home-alt icon9"></i>';
                     echo '<a href="?page=tasks&task_id=' . $row['task_id'] . '" class="data-link">';
                     echo '<span class="details">' . $row['title'] . '</span>';
                     echo '<span class="due">(Due: ' . $row['due_date'] . ')</span>';
@@ -73,22 +63,14 @@ include("config.php");
             <div class="separators"></div>
             <?php
             $username = $fetch['username'];
-            $taskresult = mysqli_query($conn, "SELECT * FROM `all_tasks` WHERE `assigned_to` = '$username' AND `status` = 'Ongoing' AND `due_date` = '$currentDate';");
+            $taskresult = mysqli_query($conn, "SELECT * FROM `all_tasks` WHERE `assigned_to` = '$username' AND `status` = 'Ongoing' AND category = 'Home';");
             if (mysqli_num_rows($taskresult) > 0) {
                 while ($row = mysqli_fetch_assoc($taskresult)) {
                     if ($row['assigned_by'] != $username) {
                         echo '<div class="task-model">';
 
                         echo '<li class="task-detail">';
-                        if ($row["category"] === "Work") {
-                            echo '<i class="bx bx-briefcase-alt-2 icon1"></i>';
-                        } elseif ($row['category'] === 'Home') {
-                            echo '<i class="bx bx-home-alt icon2"></i>';
-                        } elseif ($row['category'] === 'Coding') {
-                            echo '<i class="bx bxs-keyboard icon3"></i>';
-                        } elseif ($row['category'] === 'Others') {
-                            echo '<i class="bx bx-message-dots icon4"></i>';
-                        }
+                        echo '<i class="bx bx-home-alt icon9"></i>';
                         echo '<a href="?page=tasks&task_id=' . $row['task_id'] . '" class="data-link">';
                         echo '<span class="details">' . $row['title'] . '</span>';
                         echo '<span class="due">(Due: ' . $row['due_date'] . ')</span>';
@@ -121,21 +103,13 @@ include("config.php");
             <div class="separators"></div>
             <?php
             $username = $fetch['username'];
-            $taskresult = mysqli_query($conn, "SELECT * FROM `all_tasks` WHERE `assigned_by` = '$username' AND `status` = 'Ongoing' AND `due_date` = '$currentDate';");
+            $taskresult = mysqli_query($conn, "SELECT * FROM `all_tasks` WHERE `assigned_by` = '$username' AND `status` = 'Ongoing' AND category = 'Home';");
             if (mysqli_num_rows($taskresult) > 0) {
                 while ($row = mysqli_fetch_assoc($taskresult)) {
                     if ($row['assigned_by'] === $username && $row['assigned_to'] != $username) {
                         echo '<div class="task-model">';
                         echo '<li class="task-detail">';
-                        if ($row["category"] === "Work") {
-                            echo '<i class="bx bx-briefcase-alt-2 icon1"></i>';
-                        } elseif ($row['category'] === 'Home') {
-                            echo '<i class="bx bx-home-alt icon2"></i>';
-                        } elseif ($row['category'] === 'Coding') {
-                            echo '<i class="bx bxs-keyboard icon3"></i>';
-                        } elseif ($row['category'] === 'Others') {
-                            echo '<i class="bx bx-message-dots icon4"></i>';
-                        }
+                        echo '<i class="bx bx-home-alt icon9"></i>';
                         echo '<a href="?page=tasks&task_id=' . $row['task_id'] . '" class="data-link">';
                         echo '<span class="details">' . $row['title'] . '</span>';
                         echo '<span class="due">(Due: ' . $row['due_date'] . ')</span>';

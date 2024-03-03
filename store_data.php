@@ -126,13 +126,13 @@ if (isset($_POST['complete'])) {
                     echo '<i class="bx bxs-circle-three-quarter icon10"></i>';
                 } elseif ($status === "Completed") {
                     echo '<i class="bx bxs-check-circle icon11" ></i>';
+                } elseif ($status === "Past-Due") {
+                    echo '<i class="bx bxs-message-square-x icon13"></i>';
                 }
                 ?>
-                <span class="text-details">
-                    <?php
-                    echo $status;
-                    ?>
-                </span>
+                <?php
+                echo $status;
+                ?>
             </span>
         </div>
 
@@ -140,16 +140,22 @@ if (isset($_POST['complete'])) {
             <form action="" method="post" enctype="multipart/form-data">
                 <?php
                 $username = $fetch['username'];
-                if ($assigned_by != $username && $assigned_to === $username) {
-                    echo '<input type="submit" class="btn btn-danger me-md-3" name="delete" value="Delete Task"></input>';
-                    echo '<input type="submit" class="btn btn-success me-md-3" name="complete" value="Task Completed"></input>';
-                } else {
-                    echo '<a href="?page=edit&task_id= ' . $task_id . '" class="btn btn-secondary me-md-3" name="edit">Edit Task</a>';
-                    echo '<input type="submit" class="btn btn-danger me-md-3" name="delete" value="Delete Task"></input>';
-                    echo '<input type="submit" class="btn btn-success me-md-3" name="complete" value="Task Completed"></input>';
-                }
-                ?>
+                if ($status === 'Past-due') {
 
+                } elseif ($status === 'Completed') {
+
+                } elseif ($status === 'Ongoing') {
+                    if ($assigned_by != $username && $assigned_to === $username) {
+                        echo '<input type="submit" class="btn btn-danger me-md-3" name="delete" value="Delete Task"></input>';
+                        echo '<input type="submit" class="btn btn-success me-md-3" name="complete" value="Task Completed"></input>';
+                    } else {
+                        echo '<a href="?page=edit&task_id= ' . $task_id . '" class="btn btn-secondary me-md-3" name="edit">Edit Task</a>';
+                        echo '<input type="submit" class="btn btn-danger me-md-3" name="delete" value="Delete Task"></input>';
+                        echo '<input type="submit" class="btn btn-success me-md-3" name="complete" value="Task Completed"></input>';
+                    }
+                }
+
+                ?>
             </form>
         </div>
 

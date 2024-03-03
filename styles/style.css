@@ -28,7 +28,6 @@
 body{
     height: 100vh;
     background: var(--body-color);
-
 }
 
 /*=== Reusable CSS ===*/
@@ -507,6 +506,7 @@ list-style: none;
 
     .header-body{
         margin-left: 88px;
+        
     }
 
     .content-container{
@@ -519,10 +519,12 @@ list-style: none;
     .header-body.close{
         position: absolute;
         margin-left: 800px;
+        display: none;
     }
 
     .content-container.close{
         margin-left: 800px;
+        display: none;
     }
 
     .sidebar header .toggle{
@@ -542,20 +544,30 @@ list-style: none;
 @media only screen and (max-width: 380px){
 
     .sidebar{
-        width: 40px;
+        width: 0px;
+        background-color: #cccccc00;
+        transition: var(--tran-03);
+    }
+
+    .separator{
+        opacity: 0;
+    }
+
+    .sidebar.close .separator{
+        opacity: 1;
     }
 
     .sidebar.close{
         position: fixed;
         height: 100%;
-        width: 400px;
+        width: 360px;
         padding: 10px 14px;
-        transition: var(--tran-05);
+        transition: var(--tran-03);
     }
 
     .sidebar.close .text{
         opacity: 1;
-        margin-left: 88px;
+        margin-left: 70px;
     }
 
     .sidebar .text{
@@ -573,14 +585,14 @@ list-style: none;
     }
 
     .header-body{
-        margin-left: 30px;
+        margin-left: 10px;
+        width: 95%;
     }
 
     .content-container{
-        margin-left: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: 95%;
+        margin-left: 10px;
+        padding-left: 10px;
     }
 
     .header-body.close{
@@ -595,7 +607,7 @@ list-style: none;
     .sidebar header .toggle{
         transform: rotate(0deg);
         margin-top: -40px;
-        margin-left: 9px;
+        margin-left: 1px;
         position: relative;
         
     }
@@ -607,8 +619,29 @@ list-style: none;
         transition: var(--tran-05);
     }
 
-    .icon1, .icon2, .icon3,.icon4,.icon5,.icon6,
-.icon7,.icon8,.icon9,.icon10,.icon11,.icon12,.icon13,.text{
-    font: 20px;
+
 }
+
+@media only screen and (max-width: 380px){
+
+    .sidebar.close{
+        width: 260px;
+    }
+
+    .sidebar.close .image-text img{
+        margin-left: 20px;
+    }
+
+    .sidebar.close .text{
+        margin-left: 10px;
+    }
+
+    h5{
+        font-size: 15px;
+    }
+
+    h4{
+        font-size: 15px;
+    }
+
 }
