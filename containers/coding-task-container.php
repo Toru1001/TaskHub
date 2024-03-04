@@ -18,7 +18,7 @@ include("config.php");
         <!-- === First Container -->
         <div class="tasks-container">
             <div class="page-title">
-                <h4>High Priority Tasks</h4>
+                <h4>Coding Related Tasks</h4>
             </div>
             <div class="separators"></div>
             <?php

@@ -217,12 +217,14 @@ li{
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
+    
   }
 
   .prof{
     width: 150px; 
     height: 60px;
     object-fit: cover;
+    
   }
 
   .name-holder{
@@ -234,7 +236,7 @@ li{
     padding: 10px;
     display: flex;
     align-items: center;
-    width: 70%;
+    width: 100%;
     margin-top: 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     padding-top: 30px;
@@ -248,7 +250,7 @@ li{
     display: flex;
     flex-wrap: wrap;
     align-items: left;
-    width: 100%;
+    width: auto;
     font-weight: bolder;
     padding-left: 10px;
     gap: 20px;
@@ -443,6 +445,16 @@ input:focus {
     width: 100%;
     font-size: 12px;
   }
+
+  .task-model .details{
+    font-size: 12px;
+}
+.task-model .due{
+  font-size: 10px;
+}
+.task-model .task-assignedto{
+  font-size: 10px;
+}
 }
 
 @media only screen and (max-width: 280px) {
@@ -471,5 +483,14 @@ input:focus {
 
   .task-model i{
     margin-left: 5px;
+  }
+
+  .task-assigned{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .task-model span{
+    font-size: 12px;
   }
 }

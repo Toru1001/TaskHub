@@ -140,8 +140,16 @@ if (isset($_POST['complete'])) {
             <form action="" method="post" enctype="multipart/form-data">
                 <?php
                 $username = $fetch['username'];
-                if ($status === 'Past-due') {
+                if ($status === 'Past-Due') {
+                    if ($assigned_by != $username && $assigned_to === $username) {
 
+                    } elseif ($assigned_by === $username && $assigned_to === $username) {
+                        echo '<input type="submit" class="btn btn-danger me-md-3" name="delete" value="Delete Task"></input>';
+
+                    } else {
+                        echo '<a href="?page=edit&task_id= ' . $task_id . '" class="btn btn-secondary me-md-3" name="edit">Edit Task</a>';
+                        echo '<input type="submit" class="btn btn-danger me-md-3" name="delete" value="Delete Task"></input>';
+                    }
                 } elseif ($status === 'Completed') {
 
                 } elseif ($status === 'Ongoing') {

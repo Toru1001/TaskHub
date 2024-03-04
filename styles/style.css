@@ -429,7 +429,7 @@ list-style: none;
 
 .content-container{
     margin-left: 250px;
-    height: 100%;
+    height: auto;
     transition: var(--tran-04);
 }
 
