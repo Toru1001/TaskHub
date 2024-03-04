@@ -121,7 +121,11 @@ if (isset($_POST['edittask'])) {
                         $result = mysqli_query($conn, "SELECT * FROM `users_table`");
                         if ($result) {
                             while ($row = mysqli_fetch_array($result)) {
-                                echo '<option value="' . $row['username'] . '" aria-placeholder="Select name">' . $row['firstname'] . ' ' . $row['lastname'] . '</option>';
+                                if ($row['username'] == $fetch['username']) {
+                                    echo '<option value="' . $row['username'] . '" aria-placeholder="Select name">Self</option>';
+                                } else {
+                                    echo '<option value="' . $row['username'] . '" aria-placeholder="Select name">' . $row['firstname'] . ' ' . $row['lastname'] . '</option>';
+                                }
                             }
 
                         }
