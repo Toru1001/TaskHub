@@ -50,7 +50,7 @@ li{
     flex-direction: column;
     margin-top: 30px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
 }
@@ -180,6 +180,14 @@ li{
             flex: 1;
         }
 
+        .no-task{
+          font-size: 12px;
+          color: gray;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          font-style: italic;
+        }
+
   /*===== Profile Container =====*/
   
   .profile-container{
@@ -189,6 +197,8 @@ li{
     width: 100%;
     height: 100%;
     background-color: var(--body-color);
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .profile-picture{
@@ -243,7 +253,6 @@ li{
     padding-bottom: 30px;
     border-radius: 30px;
     background-color: var(--primary-color-light);
-    
   }
 
   .profile-details .text{

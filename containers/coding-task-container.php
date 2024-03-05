@@ -44,6 +44,9 @@ include("config.php");
                     }
                     echo '</div>';
                 }
+            }else{
+                echo '<span class="no-task">NO TASKS</span>';
+            
             }
             ?>
             <div class="separators"></div>
@@ -89,6 +92,9 @@ include("config.php");
                         echo '</div>';
                     }
                 }
+            }else{
+                echo '<span class="no-task">NO TASKS</span>';
+            
             }
             ?>
         </div>
@@ -126,6 +132,9 @@ include("config.php");
                         echo '</div>';
                     }
                 }
+            }else{
+                echo '<span class="no-task">NO TASKS</span>';
+            
             }
             ?>
         </div>

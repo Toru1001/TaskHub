@@ -40,6 +40,7 @@ mysqli_query($conn, $updateQuery);
   if (mysqli_num_rows($select) > 0) {
     $fetch = mysqli_fetch_assoc($select);
   }
+  $img = $fetch['img'];
   ?>
 
   <header class="header-body">
@@ -47,7 +48,7 @@ mysqli_query($conn, $updateQuery);
       <div class="profile">
         <li>
           <a href="javascript:void(0);" onclick="menuToggle();"><img class="prof"
-              src="<?php echo 'profile_picture/' . $fetch['img'] ?>" alt="" /></a>
+              src="<?php echo 'profile_picture/' . ($img? $img : 'img/placeholder.jpg'); ?>" alt="" /></a>
         </li>
       </div>
     </div>
