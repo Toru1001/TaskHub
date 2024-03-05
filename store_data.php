@@ -144,8 +144,8 @@ if (isset($_POST['complete'])) {
                     if ($assigned_by != $username && $assigned_to === $username) {
 
                     } elseif ($assigned_by === $username && $assigned_to === $username) {
+                        echo '<a href="?page=edit&task_id= ' . $task_id . '" class="btn btn-secondary me-md-3" name="edit">Edit Task</a>';
                         echo '<input type="submit" class="btn btn-danger me-md-3" name="delete" value="Delete Task"></input>';
-
                     } else {
                         echo '<a href="?page=edit&task_id= ' . $task_id . '" class="btn btn-secondary me-md-3" name="edit">Edit Task</a>';
                         echo '<input type="submit" class="btn btn-danger me-md-3" name="delete" value="Delete Task"></input>';

@@ -70,7 +70,6 @@ if (isset($_POST['submittask'])) {
                                     echo '<option value="' . $row['username'] . '" aria-placeholder="Select name">' . $row['firstname'] . ' ' . $row['lastname'] . '</option>';
                                 }
                             }
-
                         }
                         ?>
                     </select>
